@@ -1,0 +1,42 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Data</title>
+</head>
+<body>
+    <h1>Subject Data</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                
+                <tr>
+                    {% for i in tableHeaders %} 
+                    <td>{{ i }}</td>
+                    {% endfor %}
+                </tr>
+     
+            </tr>
+        </thead>
+        <tbody>
+
+
+            {% for i in data %} 
+            <tr>
+                <td>{{ i.StudentID }}</td>
+                <td>{{ i.Subject }}</td>
+                <td>{{ i.Average_Score }}</td>
+            </tr>
+        {% endfor %} 
+
+          
+        </tbody>
+    </table>
+</body>
+</html>
+

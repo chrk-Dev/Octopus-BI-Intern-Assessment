@@ -1,0 +1,51 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary Data</title>
+</head>
+<body>
+    <h1>Summary Data</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                
+                <tr>
+                    {% for i in tableHeaders %} 
+                    <td>{{ i }}</td>
+                    {% endfor %}
+                </tr>
+     
+            </tr>
+        </thead>
+        <tbody>
+
+
+            {% for i in data %} 
+            <tr>
+                <td>{{ i.school_name }}</td>
+                <td>{{ i.sydney_participants }}</td>
+                <td>{{ i.assessment_areas }}</td>
+                <td>{{ i.award }}</td>
+                <td>{{ i.Class }}</td>
+                <td>{{ i.correct_answer_percentage_per_class }}</td>
+                <td>{{ i.Correct_Answers }}</td>
+                <td>{{ i.StudentID }}</td>
+                <td>{{ i.participant }}</td>
+                <td>{{ i.student_score }}</td>
+                <td>{{ i.Subject }}</td>
+                <td>{{ i.Answers }}</td>
+            </tr>
+        {% endfor %} 
+
+          
+        </tbody>
+    </table>
+</body>
+</html>
+
