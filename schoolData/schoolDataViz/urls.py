@@ -10,5 +10,5 @@ urlpatterns = [
     path("SummaryData/", views.getSummaryData, name="getSummaryData"),
     path("AwardData/", views.getAwardData, name="getAwardData"),
     path("SubjectData/", views.getSubjectData, name="getSubjectData"),
-    path("AnswersData/", views.getAnswersData, name="getAnswers"),
+    path("AnswersData/", views.getAnswersData, name="getAnswersData"),
 ]

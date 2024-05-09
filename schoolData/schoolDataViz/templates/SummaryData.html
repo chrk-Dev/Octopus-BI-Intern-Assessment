@@ -1,5 +1,5 @@
 
-
+{% extends 'index.html' %}
 
 
 <!DOCTYPE html>
@@ -10,42 +10,73 @@
     <title>Summary Data</title>
 </head>
 <body>
-    <h1>Summary Data</h1>
-    <table border="1">
-        <thead>
-            <tr>
-                
-                <tr>
-                    {% for i in tableHeaders %} 
-                    <td>{{ i }}</td>
+    {% block content %}
+    <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
+        <span class="font-medium"><h3>Summary Data</h3></span></div>
+
+
+        <div class="relative overflow-x-auto">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        {% for i in tableHeaders %} 
+                        <th scope="col" class="px-6 py-3">{{ i }}</th>
+                        {% endfor %}
+                       
+                        
+                        
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    {% for i in data %} 
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            {{ i.school_name }}
+                        </th>
+                        <td class="px-6 py-4">
+                            {{ i.sydney_participants }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ i.assessment_areas }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ i.award }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ i.Class }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ i.correct_answer_percentage_per_class }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ i.Correct_Answers }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ i.StudentID }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ i.participant }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ i.student_score }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ i.Subject }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ i.Answers }}
+                        </td>
+                      
+                    </tr>
                     {% endfor %}
-                </tr>
-     
-            </tr>
-        </thead>
-        <tbody>
+                   
+                </tbody>
+            </table>
+        </div>
 
-
-            {% for i in data %} 
-            <tr>
-                <td>{{ i.school_name }}</td>
-                <td>{{ i.sydney_participants }}</td>
-                <td>{{ i.assessment_areas }}</td>
-                <td>{{ i.award }}</td>
-                <td>{{ i.Class }}</td>
-                <td>{{ i.correct_answer_percentage_per_class }}</td>
-                <td>{{ i.Correct_Answers }}</td>
-                <td>{{ i.StudentID }}</td>
-                <td>{{ i.participant }}</td>
-                <td>{{ i.student_score }}</td>
-                <td>{{ i.Subject }}</td>
-                <td>{{ i.Answers }}</td>
-            </tr>
-        {% endfor %} 
-
-          
-        </tbody>
-    </table>
+        
+    {% endblock %}
 </body>
 </html>
 

@@ -1,5 +1,5 @@
 
-
+{% extends 'index.html' %}
 
 
 <!DOCTYPE html>
@@ -10,32 +10,40 @@
     <title>Award Data</title>
 </head>
 <body>
-    <h1>Award Data</h1>
-    <table border="1">
-        <thead>
-            <tr>
-                
-                <tr>
-                    {% for i in tableHeaders %} 
-                    <td>{{ i }}</td>
+    {% block content %}
+    <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
+        <span class="font-medium"><h3>Award Data</h3></span></div>
+
+        <div class="relative overflow-x-auto">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        {% for i in tableHeaders %} 
+                        <th scope="col" class="px-6 py-3">{{ i }}</th>
+                        {% endfor %}
+                       
+                        
+                        
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    {% for i in data %} 
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            {{ i.StudentID }}
+                        </th>
+                        <td class="px-6 py-4">
+                            {{ i.Award }}
+                        </td>
+                      
+                    </tr>
                     {% endfor %}
-                </tr>
-     
-            </tr>
-        </thead>
-        <tbody>
-
-
-            {% for i in data %} 
-            <tr>
-                <td>{{ i.StudentID }}</td>
-                <td>{{ i.Award }}</td>
-            </tr>
-        {% endfor %} 
-
-          
-        </tbody>
-    </table>
+                   
+                </tbody>
+            </table>
+        </div
+    {% endblock %}
 </body>
 </html>
 
